@@ -15,7 +15,7 @@ def login_view(request):
     
     if username is None or password is None:
         return JsonResponse({"detail":"Please provide username and password"})
-    user = authenticate(username=username, passowrd=password)
+    user = authenticate(username=username, password=password)
     if user is None:
         return JsonResponse({"detail":"invalid credentials"}, status=400)
     login(request, user)
